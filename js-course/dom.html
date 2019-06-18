@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+    body {
+      background-color: rgb(43, 168, 110);
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 0 15px;
+      color: white;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin: 0;
+    }
+    
+    p {
+      font-size: 22px;
+    }
+
+    button,
+    input {
+      background-color: #fff;
+      color: #444;
+      font-size: 16px;
+      font-weight: 600;
+      box-shadow: none;
+      border: 2px solid #cecece;
+      border-radius: 8px;
+      padding: 12px 20px;
+      margin: 15px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>
+    Document object model
+  </h1>
+
+  <p>
+    learning the <strong>DOM</strong>
+  </p>
+
+  <br>
+
+  <h1>
+    Doing the maths
+  </h1>
+
+  <input type="number" name="val1" id="val1" placeholder="Number A">
+
+  <strong>
+    +
+  </strong>
+
+  <input type="number" name="val2" id="val2" placeholder="Number B">
+
+  <br>
+
+  <button type="submit" id="btn" onclick="somar()">
+    Calculate
+  </button>
+
+  <div id="calc">Results goes here...</div>
+
+  <br>
+  
+  <script>
+    var area = document.getElementById('btn')
+
+    area.addEventListener('click', clicar)
+    area.addEventListener('mouseenter', entrar)
+    area.addEventListener('mouseout', sair)
+    calc.addEventListener('click', () => {
+      somar()
+    })
+
+    function clicar() {
+      area.innerText = 'Clicked'
+      area.style.background = '#cc1038'
+    }
+
+    function entrar() {
+      area.innerText = 'Hovered'
+      area.style.background = '#223355'
+      area.style.color = '#fff'
+    }
+
+    function sair() {
+      area.innerText = 'Calculate'
+      area.style.background = '#fff'
+      area.style.color = '#444'
+    }
+
+    function somar() {
+      var valA = window.document.getElementById('val1')
+      var valB = window.document.getElementById('val2')
+      var calc = window.document.getElementById('calc')
+      var numA = Number(valA.value)
+      var numB = Number(valB.value)
+      var sum = numA + numB
+
+      calc.innerHTML = `
+        The sum between
+        <strong>${numA}</strong>
+        and
+        <strong>${numB}</strong>
+        Is Equals to
+        <strong>${sum}</strong>
+      `
+    }
+  </script>
+</body>
+</html>
+
+<!-- some mouse events -->
+<!--
+  mouseenter
+  mousemove
+  mousedown
+  mouseup
+  click
+  mouseout
+-->
