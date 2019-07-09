@@ -1,10 +1,11 @@
-var i = 1
+var c = 1
+var d = 1
 
-// while (i <= 500) {
-//   console.log('hey apple, apple!')
-//   i++
-// }
+while (c <= 3) {
+  console.log('hey, pinapple!')
+  c++
+}
 
 do {
-  console.log('hey apple, apple!')
-} while (i <= 22)
+  console.log('hey, applepen!')
+} while (d <= 3)
