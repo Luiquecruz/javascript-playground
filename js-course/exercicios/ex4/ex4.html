@@ -12,7 +12,7 @@
   
   <header>
     <h1>
-      Verificador de idade
+      Tabuada
     </h1>
   </header>
 
@@ -21,42 +21,25 @@
       <div class="content">
         <form>
           <div>
-            <label for="txtano">
-              Ano de Nascimento: &nbsp;
+            <label for="txtN">
+              Número &nbsp;
             </label>
   
-            <input type="number" id="txtano" name="txtano" min="0">
+            <input type="number" id="txtN" name="txtano">
+
+            <button type="button" onclick="tabuada()">
+              Gerar Tabuada
+            </button>
           </div>
-
-          <br>
-
-          <div>
-            <span>
-              Sexo: &nbsp;
-            </span>
-
-            <label for="m">Masculino</label>
-            <input type="radio" name="sex" id="m" checked>
-
-            <span>|</span>  
-          
-            <input type="radio" name="sex" id="f">
-            <label for="f">Feminino</label>
-          </div>
-
-          <br>
-
-          <button type="button" onclick="verificar()">
-            Verificar
-          </button>
         </form>
-        <p>
+
+        <br>
+
+        <div id="selTab">
+          <p>
+            Digite um número acima para gerar a tabuada!
+          </p>
         </div>
-        
-        <div id="res">
-          <small>
-            Preencha os dados acima para verificar a idade.
-          </small>
       </div>
     </section>
   </main>
