@@ -6,6 +6,6 @@ while (c <= 3) {
   c++
 }
 
-do {
-  console.log('hey, applepen!')
-} while (d <= 3)
+// do {
+//   console.log('hey, applepen!')
+// } while (d <= 3)
