@@ -1,2 +1,3 @@
-for (var hash = '#'; hash.length < 8; hash += '#') 
- console.log(hash);
+for (var hash = '#'; hash.length < 8; hash += '#') {
+  console.log(hash);
+}

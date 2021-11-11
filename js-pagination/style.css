@@ -1,0 +1,72 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,300);
+
+:root {
+  --black: #1d1d1d;
+  --primary: hsl(222, 98%, 56%);
+  --white: #f4f4f4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  background-color: var(--primary);
+
+  /*         box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.2); */
+  padding: 16px;
+}
+
+#paginate {
+  width: 100%;
+
+  margin: 32px auto;
+}
+
+#paginate .item {
+  border-bottom: 1px solid var(--primary);
+  padding: 16px 32px;
+  transition: all 0.2s ease;
+}
+
+#paginate .item:hover {
+  filter: contrast(.5);
+}
+
+#paginate .controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+#paginate .controls div {
+  cursor: pointer;
+  /* border: 1px solid #eee; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14;
+}
+
+#paginate .controls div:not(.numbers),
+#paginate .controls div.numbers div{
+  width: 40px;
+  height: 40px;
+}
+
+#paginate .controls div.numbers div:hover,
+#paginate .controls div.numbers div.active {
+  color: var(--primary);
+}
