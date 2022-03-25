@@ -1,0 +1,120 @@
+:root {
+  --bg: #7449b8;
+  --content: #fcfcfc;
+  --text: #0f0e0e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--bg);
+  padding: 24px;
+  margin: 0;
+}
+
+header h1 {
+  color: var(--content);
+  font-size: 24px;
+  text-align: center;
+  margin: 0;
+}
+
+main section {
+  background-color: var(--content);
+  box-shadow: 0 1px 10px rgba(0,0,0,.2);
+  border-radius: 10px;
+  max-width: 600px;
+  padding: 24px;
+  margin: 24px auto;
+}
+
+.field {
+  flex: 1;
+}
+
+.field + .field {
+  margin-top: 24px;
+}
+
+.field:last-of-type {
+  margin-bottom: 24px;
+}
+
+.field input {
+  width: 100%;
+}
+
+.field label {
+  display: block;
+  font-weight: bold;
+  margin: 0 0 12px;
+}
+
+input,
+button {
+  color: var(--text);
+  border-color: var(--text);
+  font-weight: bolder;
+  padding: 12px 24px;
+  border-radius: 6px;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  background-color: var(--content);
+  letter-spacing: .024em;
+  text-transform: uppercase;
+}
+
+hr {
+  opacity: .25;
+  border-width: 0 0 2px 0;
+  border-color: var(--text);
+  margin: 24px 0;
+}
+
+#imcContainer p {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+#imcContainer p span {
+  font-weight: bold;
+  font-size: 32px;
+  color: var(--bg);
+}
+
+table {
+  opacity: .75;
+  width: 100%;
+  border: 2px solid var(--text);
+  border-radius: 6px;
+  margin-top: 24px;
+}
+
+table th,
+table td {
+  border-width: 0 0 2px 0;
+  border-style: solid;
+  border-color: var(--text);
+  text-align: left;
+  padding: 12px;
+}
+
+table tr:last-of-type td {
+  border: none;
+}
+
+footer p {
+  color: var(--content);
+  opacity: .75;
+  font-size: 12px;
+  letter-spacing: .024em;
+  text-align: center;
+  margin: 0;
+}

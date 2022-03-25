@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="ex6.css">
+</head>
+<body>
+  <header>
+    <h1>
+      IMC
+    </h1>
+  </header>
+
+  <main>
+    <section>
+      <div class="content">
+        <form name="imcEntries">
+          <div class="field">
+            <label for="alturaVal">Altura</label>
+            <input
+              type="number"
+              id="alturaVal"
+              name="alturaVal"
+              placeholder="Insira sua altura..."
+              value=""
+            />
+          </div>
+
+          <div class="field">
+            <label for="pesoVal">Peso</label>
+            <input
+              type="number"
+              id="pesoVal"
+              name="pesoVal"
+              placeholder="Insira seu peso..."
+              value=""
+            />
+          </div>
+
+          <button type="button" onclick="calculateImc()">
+            Calcular
+          </button>
+        </form>
+
+        <div id="imcContainer"></div>
+
+        <hr />
+
+        <table>
+          <thead>
+            <tr>
+              <th>Condição</th>
+              <th>Mulheres</th>
+              <th>Homens</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Abaixo do peso</td>
+              <td>< 19,1</td>
+              <td>< 20,7</td>
+            </tr>
+            <tr>
+              <td>Normal</td>
+              <td>19,1 - 25,8</td>
+              <td>20,7 - 26,4</td>
+            </tr>
+            <tr>
+              <td>Pouco acima do peso</td>
+              <td>25,9 - 27,3</td>
+              <td>26,5 - 27,8</td>
+            </tr>
+            <tr>
+              <td>Acima do peso</td>
+              <td>27,4 - 32,3</td>
+              <td>27,9 - 31,1</td>
+            </tr>
+            <tr>
+              <td>Obeso</td>
+              <td>> 32,3</td>
+              <td>> 31,1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; IMC Calculator</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
