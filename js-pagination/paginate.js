@@ -1,13 +1,13 @@
 // Mocked backend data
 const data = Array.from({ length: 100 }).map((_, i) => `Element <strong>${i + 1}</strong>`)
 
-let perPage = 8
+let perPage = 10
 
 const state = {
   page: 1,
   perPage,
   totalPages: Math.ceil(data.length / perPage),
-  maxVisibleButtons: 4
+  maxVisibleButtons: 5
 }
 
 // get element helper
@@ -120,19 +120,17 @@ const buttons = {
       totalPages
     } = state
 
-    let maxLeft = (page - Math.floor(maxVisibleButtons / 2))
-    let maxRight = (page + Math.floor(maxVisibleButtons / 2))
+    let maxLeft = (page - Math.ceil(maxVisibleButtons / 3))
+    let maxRight = (page + Math.ceil(maxVisibleButtons / 3))
 
     if (maxLeft < 1) {
       maxLeft = 1
       maxRight = maxVisibleButtons
     }
 
-    if (maxLeft > totalPages) {
-      maxLeft = totalPages - (maxVisibleButtons - 1)
+    if (maxRight > totalPages) {
       maxRight = totalPages
-
-      if (maxLeft < 1) maxLeft = 1
+      maxLeft = maxVisibleButtons + 1
     }
 
     return {
