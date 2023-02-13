@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #JsCountdown {
+      display: flex;
+    }
+
+    #JsCountdown div {
+      display: flex;
+      align-items: center;
+      font-size: 48px;
+      font-weight: 600;
+    }
+
+    #JsCountdown div span {
+      line-height: 90%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="JsCountdown"></div>
+
+  <script>
+    let inputTime = 172800; // 2 days in seconds
+    const targetContainer = document.querySelector("#JsCountdown");
+
+    displayTime(inputTime);
+
+    const countdown = setInterval(() => {
+      inputTime--;
+      displayTime(inputTime);
+
+      if (inputTime < 1) {
+        clearInterval(countdown);
+      }
+    }, 1000);
+
+    function displayTime(seconds) {
+      const day = Math.floor(seconds / (60 * 60 * 24));
+      const hour = Math.floor(seconds % (60 * 60 * 24) / (60 * 60));
+      const min = Math.floor(seconds % (60 * 60) / 60);
+      const sec = Math.floor(seconds % 60);
+
+      targetContainer.innerHTML = `
+        <div class="days">${day < 10 ? "0" : ""}${day} <span>:</span></div>
+        <div class="hours">${hour < 10 ? "0" : ""}${hour} <span>:</span></div>
+        <div class="minutes">${min < 10 ? "0" : ""}${min} <span>:</span></div>
+        <div class="seconds">${sec < 10 ? "0" : ""}${sec}</div>
+      `;
+    }
+  </script>
+</body>
+
+</html>

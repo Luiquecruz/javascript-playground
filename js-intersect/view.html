@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    section:nth-child(1) {
+      background: #6495ED;
+    }
+
+    section:nth-child(2) {
+      background: #FF7F50;
+    }
+
+    section:nth-child(3) {
+      background: #008080;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 48px;
+      text-transform: uppercase;
+      text-align: center;
+      margin: 0;
+    }
+
+    .to-show {
+      transform: translate(0, 0);
+      opacity: 0;
+      filter: blur(6px);
+      transition: cubic-bezier(0.075, 0.82, 0.165, 1), 800ms;
+    }
+
+    .appear {
+      transform: translate(0, 0);
+      opacity: 1;
+      filter: blur(0);
+    }
+  </style>
+</head>
+
+<body>
+  <section class="to-show">
+    <h1>section 1</h1>
+  </section>
+  <section class="to-show">
+    <h1>section 2</h1>
+  </section>
+  <section class="to-show">
+    <h1>section 3</h1>
+  </section>
+</body>
+
+<script src="intersect.js"></script>
+
+</html>
