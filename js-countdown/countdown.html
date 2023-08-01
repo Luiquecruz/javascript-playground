@@ -5,16 +5,32 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Countdown JS</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: #d9a2d9;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      padding: 32px;
+    }
+
     body {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
       overflow: hidden;
+      background: #f0c7f0;
+      border-radius: 12px;
+      margin: 0;
+      padding: 0;
     }
 
     #JsCountdown {
@@ -26,6 +42,8 @@
       align-items: center;
       font-size: 48px;
       font-weight: 600;
+      color: #fff;
+      text-shadow: 1px 1px 8px rgba(0,0,0,.1);
     }
 
     #JsCountdown div span {
@@ -35,10 +53,12 @@
 </head>
 
 <body>
-  <div id="JsCountdown"></div>
+  <div class="countdown-content">
+    <div id="JsCountdown"></div>
+  </div>
 
   <script>
-    let inputTime = 172800; // 2 days in seconds
+    let inputTime = 345603; // 4 days in seconds
     const targetContainer = document.querySelector("#JsCountdown");
 
     displayTime(inputTime);
@@ -47,14 +67,13 @@
       inputTime--;
       displayTime(inputTime);
 
-      if (inputTime < 1) {
-        clearInterval(countdown);
-      }
+      if (inputTime < 1) clearInterval(countdown);
     }, 1000);
 
     function displayTime(seconds) {
       const day = Math.floor(seconds / (60 * 60 * 24));
-      const hour = Math.floor(seconds % (60 * 60 * 24) / (60 * 60));
+      const hour = Math.floor(seconds % (60 * 60 * 24) / (60 * 60)); // hours in 24h format (to use w/ day var)
+      // const hour = Math.floor(seconds / 86400) * 24 + Math.floor((seconds % 86400) / 3600); // hours in 24h+ format (to use w/out day var)
       const min = Math.floor(seconds % (60 * 60) / 60);
       const sec = Math.floor(seconds % 60);
 
@@ -62,7 +81,7 @@
         <div class="days">${day < 10 ? "0" : ""}${day} <span>:</span></div>
         <div class="hours">${hour < 10 ? "0" : ""}${hour} <span>:</span></div>
         <div class="minutes">${min < 10 ? "0" : ""}${min} <span>:</span></div>
-        <div class="seconds">${sec < 10 ? "0" : ""}${sec}</div>
+        <div class="seconds">${sec < 10 ? "0" : ""}${sec} </div>
       `;
     }
   </script>
